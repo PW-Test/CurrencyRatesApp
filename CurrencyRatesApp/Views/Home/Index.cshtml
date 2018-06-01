@@ -1,35 +1,33 @@
 ﻿@{
-    ViewBag.Title = "Currency Rates";
+    ViewBag.Title = "Currency Rates App";
 }
 
-<div class="container">
     <div class="row">
-        <h4>
-            Currency rates fetched from https://www.forex.se
-        </h4>
-    </div>
-    <div class="row">
-        <button class="btn" data-bind="click: loadRates">Load</button>
-    </div>
-
-    <div class="row">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Code</th>
-                    <th>Buy</th>
-                    <th>Sell</th>
-                </tr>
-            </thead>
-            <tbody data-bind="foreach: Rates">
-                <tr>
-                    <td data-bind="text: Code"> </td>
-                    <td data-bind="text: Buy"> </td>
-                    <td data-bind="text: Sell"> </td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="col-md-12">
+   
+            <h3>Currency Rates - www.forex.se</h3>
+            <p>Please click load button to fetch currencies</p>
+            <button class="btn btn-primary" data-bind="click: loadRates">Load</button>
+        </div>
     </div>
 
-
-</div>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Buy</th>
+                        <th>Sell</th>
+                    </tr>
+                </thead>
+                <tbody data-bind="foreach: Rates">
+                    <tr>
+                        <td data-bind="text: Code"> </td>
+                        <td data-bind="text: Buy"> </td>
+                        <td data-bind="text: Sell"> </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
