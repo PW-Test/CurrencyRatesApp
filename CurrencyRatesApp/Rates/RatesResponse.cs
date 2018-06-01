@@ -22,6 +22,6 @@ namespace CurrencyRatesApp.Rates
         public string BuyCash { get; set; }
 
         [XmlElement("sell_cash")]
-        public string SelCach { get; set; }
+        public string SellCash { get; set; }
     }
 }
