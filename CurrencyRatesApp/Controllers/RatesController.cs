@@ -4,7 +4,7 @@ using System.Web.Mvc;
 
 namespace CurrencyRatesApp.Controllers
 {
-    public class HomeController : Controller
+    public class RatesController : Controller
     {
         public ActionResult Index()
         {

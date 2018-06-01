@@ -5,13 +5,13 @@ using NUnit.Framework;
 namespace CurrencyRatesApp.Tests.Controllers
 {
     [TestFixture]
-    public class HomeControllerTest
+    public class RatesControllerTest
     {
         [Test]
         public void Index()
         {
             // Arrange
-            HomeController controller = new HomeController();
+            RatesController controller = new RatesController();
 
             // Act
             ViewResult result = controller.Index() as ViewResult;
