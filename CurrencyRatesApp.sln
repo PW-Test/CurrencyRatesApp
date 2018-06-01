@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2018
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyRatesApp", "CurrencyRatesApp\CurrencyRatesApp.csproj", "{658BF5F3-7FBF-4CF8-99B0-F4059A3FB213}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyRatesApp.Tests", "CurrencyRatesApp.Tests\CurrencyRatesApp.Tests.csproj", "{8C1479FE-DF23-4CC2-92E9-68F8FC329917}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{658BF5F3-7FBF-4CF8-99B0-F4059A3FB213}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{658BF5F3-7FBF-4CF8-99B0-F4059A3FB213}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{658BF5F3-7FBF-4CF8-99B0-F4059A3FB213}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{658BF5F3-7FBF-4CF8-99B0-F4059A3FB213}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C1479FE-DF23-4CC2-92E9-68F8FC329917}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C1479FE-DF23-4CC2-92E9-68F8FC329917}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C1479FE-DF23-4CC2-92E9-68F8FC329917}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C1479FE-DF23-4CC2-92E9-68F8FC329917}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A47E24D3-A7B4-4F39-9396-297BDCA0A44D}
+	EndGlobalSection
+EndGlobal
