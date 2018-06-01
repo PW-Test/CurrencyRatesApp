@@ -1,7 +1,5 @@
-﻿using System;
+﻿using CurrencyRatesApp.Rates;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace CurrencyRatesApp.Controllers
@@ -11,6 +9,14 @@ namespace CurrencyRatesApp.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        [HttpGet]
+        public ActionResult GetRates()
+        {
+            var rates = new RatesProvider().Get(new List<string>() { "USD", "EUR" });
+
+            return Json(rates, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult About()
