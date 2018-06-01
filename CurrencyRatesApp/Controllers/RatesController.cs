@@ -1,5 +1,6 @@
 ﻿using CurrencyRatesApp.Rates;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 
 namespace CurrencyRatesApp.Controllers
@@ -12,9 +13,10 @@ namespace CurrencyRatesApp.Controllers
         }
 
         [HttpGet]
-        public ActionResult GetRates()
+        public async Task<ActionResult> GetRates()
         {
-            var rates = new RatesProvider().Get(new List<string>() { "USD", "EUR" });
+            var provider = new RatesProvider();
+            var rates = await provider.Get(new List<string>() { "USD", "EUR" });
 
             return Json(rates, JsonRequestBehavior.AllowGet);
         }

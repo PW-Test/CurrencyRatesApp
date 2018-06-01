@@ -1,6 +1,7 @@
 ﻿using RestSharp;
 using System;
 using System.IO;
+using System.Threading.Tasks;
 using System.Xml.Serialization;
 
 namespace CurrencyRatesApp.Rates
@@ -9,7 +10,7 @@ namespace CurrencyRatesApp.Rates
     {
         readonly string BaseUrl = "https://www.forex.se/";
 
-        public T Execute<T>() where T : new()
+        public async Task<T> ExecuteAsync<T>() where T : new()
         {
             var client = new RestClient();
             client.BaseUrl = new Uri(BaseUrl, UriKind.Absolute);
@@ -17,17 +18,15 @@ namespace CurrencyRatesApp.Rates
             var request = new RestRequest("ratesxml.asp?id=492");
             request.RequestFormat = DataFormat.Xml;
 
-            var response = client.Execute(request);
-
-            if (response.ErrorException != null)
-            {
-                throw new ApplicationException("Error during rest call execution", response.ErrorException);
-            }
-
+            var taskCompletionSource = new TaskCompletionSource<T>();
             var serializer = new XmlSerializer(typeof(T));
-            var stringReader = new StringReader(response.Content);
 
-            return (T)serializer.Deserialize(stringReader);
+            client.ExecuteAsync<T>(request, (response) => {
+                var stringReader = new StringReader(response.Content);
+                taskCompletionSource.SetResult((T)serializer.Deserialize(stringReader));
+            });
+
+            return await taskCompletionSource.Task;
         }
     }
 }
