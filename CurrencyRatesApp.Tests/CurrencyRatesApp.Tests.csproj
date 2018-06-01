@@ -98,6 +98,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
+    <Compile Include="RatesApiClient_PoC.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />
